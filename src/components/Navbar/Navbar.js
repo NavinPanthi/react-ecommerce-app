@@ -5,7 +5,7 @@ const Navbar = () => {
   return (
     <nav className="flex flex-row justify-between w-full items-center bg-indigo-500 text-white ">
       <Link to="/" className="text-3xl pl-5 font-medium">
-        My site
+        Panthi Store
       </Link>
       <ul className="flex flex-row justify-end text-lg mt-0 px-6 py-3 text-md ">
         <CustomLink to="/Signin" className="px-5 ">

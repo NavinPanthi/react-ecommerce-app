@@ -5,7 +5,7 @@ import Navbar from "./components/Navbar/Navbar";
 import SignIn from "./components/Auth/SignIn";
 const App = () => {
   return (
-    <div>
+    <div className="">
       <Navbar />
       <div className="container">
         <Routes>

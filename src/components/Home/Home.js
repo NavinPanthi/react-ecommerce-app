@@ -1,4 +1,6 @@
+import ItemsList from "../Items/ItemsList";
+
 const Home = () => {
-  return <div>Home</div>;
+  return <ItemsList></ItemsList>;
 };
 export default Home;
