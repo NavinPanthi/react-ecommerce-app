@@ -5,9 +5,9 @@ import Navbar from "./components/Navbar/Navbar";
 import SignIn from "./components/Auth/SignIn";
 const App = () => {
   return (
-    <div className="">
+    <div className="bg-slate-100">
       <Navbar />
-      <div className="container">
+      <div className="">
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/Cart" element={<Cart />} />
