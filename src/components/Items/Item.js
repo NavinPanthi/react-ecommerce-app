@@ -1,9 +1,8 @@
 import { AiFillStar } from "react-icons/ai";
-
 const Item = ({ item }) => {
 
   return (
-    <div className="">
+<>
       <img
         src={item.image}
         alt="representation of a product"
@@ -19,8 +18,8 @@ const Item = ({ item }) => {
           ({item.rating.count})
         </span>
       </div>
-      <div className="font-semibold text-black">Rs. {item.price}</div>
-    </div>
+      <div className="font-semibold text-black tracking-tight">Rs. {item.price}</div>
+      </>
   );
 };
 export default Item;
