@@ -1,7 +1,9 @@
 
 import { Link, useLocation } from "react-router-dom";
+import {BsCart3} from "react-icons/bs";
 // instead of "a" tag, we use "Link" component in react routing.
 // instead of href, we use to attribute in Link component.
+import Cart from "../Cart/Cart";
 const Navbar = () => {
   return (
     <nav className="flex flex-row justify-between w-full items-center bg-indigo-500 text-white sticky top-0">
@@ -12,7 +14,8 @@ const Navbar = () => {
         <CustomLink to="/Signin" className="px-5 ">
           Sigin
         </CustomLink>
-        <CustomLink to="/Cart" className="px-5 ">
+        <CustomLink to="/Cart" className="px-5 flex items-center justify-around">
+          <BsCart3 className="mr-2" size="1.2em"></BsCart3>
           Cart
         </CustomLink>
       </ul>
