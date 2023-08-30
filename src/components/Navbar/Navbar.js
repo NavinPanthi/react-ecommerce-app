@@ -16,16 +16,23 @@ const Navbar = () => {
         Panthi Store
       </Link>
       <ul className="flex flex-row justify-end text-base font-medium mt-0 px-6 py-3 text-md ">
-        <CustomLink to="/Signin" className="px-5 h-8 flex items-center">
+        <CustomLink
+          to="/Signin"
+          className="px-5 w-28 h-8 flex items-center justify-center"
+        >
           Sigin
         </CustomLink>
         <CustomLink
           to="/Cart"
-          className="px-5 h-8 flex items-center justify-around"
+          className="px-5 w-28 h-8 flex items-center justify-around"
         >
           <div className="flex relative h-10 items-center w-8">
             <BsCart3 className="mr-2" size="1.5em"></BsCart3>
-            <div className="h-4 w-4 flex items-center text-indigo-600 justify-center small-font rounded-full bg-white overflow-hidden absolute right-1 top-0 font-normal ring-2 ring-indigo-500">
+            <div
+              className={`h-4 w-4 flex items-center text-indigo-600 justify-center small-font rounded-full bg-white overflow-hidden absolute right-1 top-0 font-normal ring-2 ring-indigo-500 ${
+                totalCartItems === 0 ? "hidden" : ""
+              }`}
+            >
               {totalCartItems}
             </div>
           </div>
@@ -40,7 +47,7 @@ const CustomLink = ({ to, children, className }) => {
   const location = useLocation();
   const path = location.pathname;
   return (
-    <li className={path === to ? "visited:text-purple-600" : ""}>
+    <li className={path === to ? "border-b transition-border" : ""}>
       <Link to={to} className={className}>
         {children}
       </Link>

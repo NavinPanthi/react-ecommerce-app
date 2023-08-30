@@ -8,17 +8,18 @@ const CartItem = ({ item }) => {
   const dispatch = useDispatch();
   const id = matchingItem.id;
   const price = matchingItem.price;
-  const handleRemove = () => {
-    dispatch(cartActions.removeFromCart({id, price}));
+  const handleRemove = (all) => {
+    dispatch(cartActions.removeFromCart({ all, id, price }));
   };
   const handleAdd = () => {
     dispatch(cartActions.addToCart({ id, price }));
   };
+  let all = null;
   return (
     <div className="grid grid-cols-4  h-28 gap-4 pt-2 p-3 overflow-hidden">
       <Link to={`/Cart/${item.id}`}>
         {" "}
-        <img src={matchingItem.image} className="w-20 p-2" alt="de" />
+        <img src={matchingItem.image} className="w-20  p-3 object-cover" alt="de" />
       </Link>
       <Link to={`/Cart/${item.id}`}>
         {" "}
@@ -27,9 +28,9 @@ const CartItem = ({ item }) => {
 
       <div className="flex items-center  flex-col gap-3">
         <span className="font-semibold text-orange-500">
-          Rs. {parseInt(item.totalPrice.toFixed(2))}
+          Rs. {parseInt(Math.round(item.totalPrice))}
         </span>
-        <button>
+        <button onClick={()=>{all="all"; handleRemove(all)}}>
           <MdDeleteForever
             className="text-gray-500"
             size="1.8em"

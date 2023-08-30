@@ -32,7 +32,12 @@ const cartSlice = createSlice({
     },
     removeFromCart(state, action) {
       const removingItem = action.payload;
-
+      if (removingItem.all === "all") {
+        state.cartList = state.cartList.filter(
+          (item) => item.id !== removingItem.id
+        );
+        state.totalQuantity -= 1;
+      }
       const existingItem = state.cartList.find(
         (item) => item.id === removingItem.id
       );
@@ -48,6 +53,10 @@ const cartSlice = createSlice({
           existingItem.totalPrice -= removingItem.price;
         }
       }
+    },
+    removeAllFromCart(state) {
+      state.cartList = state.cartList.filter((item)=>!item);
+      state.totalQuantity = 0;
     },
   },
 });
