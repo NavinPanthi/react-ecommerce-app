@@ -11,20 +11,20 @@ const Navbar = () => {
     <nav className="flex flex-row justify-between w-full items-center bg-indigo-500 text-white sticky top-0">
       <Link
         to="/"
-        className="text-3xl pl-5 font-medium tracking-tight font-serif"
+        className="text-2xl whitespace-nowrap sm:text-3xl pl-3 sm:pl-5 font-medium tracking-tight font-serif"
       >
         Panthi Store
       </Link>
       <ul className="flex flex-row justify-end text-base font-medium mt-0 px-6 py-3 text-md ">
         <CustomLink
           to="/Signin"
-          className="px-5 w-28 h-8 flex items-center justify-center"
+          className="px-2 sm:px-5 w-20 sm:w-28 h-8 flex items-center justify-center"
         >
           Sigin
         </CustomLink>
         <CustomLink
           to="/Cart"
-          className="px-5 w-28 h-8 flex items-center justify-around"
+          className="px-2 sm:px-5 w-20 sm:w-28 h-8 flex items-center justify-around"
         >
           <div className="flex relative h-10 items-center w-8">
             <BsCart3 className="mr-2" size="1.5em"></BsCart3>

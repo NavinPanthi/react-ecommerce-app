@@ -326,11 +326,18 @@ const itemSlice = createSlice({
         rating: { rate: 3.7, count: 34 },
       },
     ],
+    filteredList: [],
     changed: false,
   },
+
   reducer: {
     addItem(state, action) {
       console.log("action : state", action, ":", state);
+    },
+    searchItem(state, action) {
+      const filteredList = state.itemsList.filter((item) =>
+        item.title.toLowerCase().includes(action.payload.toLowerCase())
+      );
     },
   },
 });

@@ -16,14 +16,14 @@ const CartItem = ({ item }) => {
   };
   let all = null;
   return (
-    <div className="grid grid-cols-4  h-28 gap-4 pt-2 p-3 overflow-hidden">
+    <div className="grid grid-cols-4  h-28 gap-0 sm:gap-4 pt-2 p-0 sm:p-3 overflow-hidden">
       <Link to={`/Cart/${item.id}`}>
         {" "}
         <img src={matchingItem.image} className="w-20  p-3 object-cover" alt="de" />
       </Link>
       <Link to={`/Cart/${item.id}`}>
         {" "}
-        <div className="text-sm">{matchingItem.title}</div>
+        <div className="text-xs sm:text-sm">{matchingItem.title}</div>
       </Link>
 
       <div className="flex items-center  flex-col gap-3">
@@ -39,7 +39,7 @@ const CartItem = ({ item }) => {
       </div>
       <div className="text-center flex items-start justify-around">
         <Button onClick={handleRemove}>-</Button>
-        <span className="">{item.quantity}</span>
+        <span className="p-1">{item.quantity}</span>
         <Button onClick={handleAdd}>+</Button>
       </div>
     </div>
@@ -48,7 +48,7 @@ const CartItem = ({ item }) => {
 const Button = ({ onClick, children }) => {
   return (
     <button
-      className="text-gray-500 w-12 bg-gray-100 text-xl"
+      className="text-gray-500 w-9 sm:w-12 bg-gray-100 text-xl"
       onClick={onClick}
     >
       {children}
