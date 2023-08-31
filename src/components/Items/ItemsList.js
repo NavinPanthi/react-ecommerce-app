@@ -2,7 +2,11 @@ import { Link } from "react-router-dom";
 import Item from "./Item";
 import { useSelector } from "react-redux";
 const ItemsList = () => {
-  const items = useSelector((state) => state.item.itemsList);
+  let items = useSelector((state) => state.item.itemsList);
+  const filteredItems = useSelector((state) => state.item.filteredList);
+  if(filteredItems){
+    items = filteredItems;
+  }
   return (
     <ul className="grid grid-cols-2  sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5  bg-white my-5 ">
       {items.map((item, index) => (
