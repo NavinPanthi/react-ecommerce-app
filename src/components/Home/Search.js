@@ -15,7 +15,7 @@ const Search = () => {
       <input
         type="text"
         className="placeholder-italic py-2 border-0 w-full rounded focus:none outline-none text-sm placeholder:italic placeholder:text-slate-400"
-        placeholder="Search expense"
+        placeholder="Search product"
         onChange={handleSearch}
       />
     </div>
